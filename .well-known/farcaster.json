@@ -1,9 +1,12 @@
 {
-  "accountAssociation": { /* 툴에서 복사한 서명 객체 */ },
+  "accountAssociation": {
+    /* Warpcast Manifest Tool에서 복사해온 header/payload/signature */
+  },
   "frame": {
-    "version": "1",
-    "name":    "Farcaster Logo Catch Game",
-    "iconUrl": "https://…/farcaster-logo.png",
-    "homeUrl": "https://…/index.html"
+    "version":"1",
+    "name":"Farcaster Logo Catch Game",
+    "iconUrl":"https://hahahahama.github.io/my-bug-game/farcaster-logo.png",
+    "homeUrl":"https://hahahahama.github.io/my-bug-game/index.html"
   }
 }
+
