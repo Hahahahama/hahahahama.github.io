@@ -1,11 +1,11 @@
 {
-  "name": "Farcasters",
-  "description": "Click the Farcaster logo as it moves around to score points!",
-  "startUrl": "/index.html",
   "frame": {
-    "width": 360,
-    "height": 640
+    "version": "1",
+    "name": "Farcaster Logo Catch Game",
+    "iconUrl": "https://hahahahama.github.io/my-bug-game/farcaster-logo.png",
+    "homeUrl": "https://hahahahama.github.io/my-bug-game/index.html"
   },
-  "accountAssociation": {}
+  "accountAssociation": {
+    // Warpcast Manifest Tool에서 복사해온 서명된 객체
+  }
 }
-
