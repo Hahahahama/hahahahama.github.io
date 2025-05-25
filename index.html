@@ -1,3 +1,10 @@
+<script type="module">
+  import { sdk } from 'https://unpkg.com/@farcaster/frame-sdk?module';
+
+  // 앱 화면이 다 렌더링된 직후, 또는
+  // 필요한 초기 로직이 끝난 직후에 호출
+  sdk.actions.ready({ disableNativeGestures: true });
+</script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
