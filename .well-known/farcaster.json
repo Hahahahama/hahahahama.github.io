@@ -1,15 +1,13 @@
 {
-  {
   "accountAssociation": {
-    "header": "",
-    "payload": "",
-    "signature": ""
-  }
-},
+    "header":    "…",
+    "payload":   "…",
+    "signature": "…"
+  },
   "frame": {
     "version": "1",
     "name":    "Farcaster Logo Catch Game",
-    "iconUrl": "https://hahahahama.github.io/opengraph.png",
-    "homeUrl": "https://hahahahama.github.io/index.html"
+    "iconUrl": "https://USERNAME.github.io/my-bug-game/farcaster-logo.png",
+    "homeUrl": "https://USERNAME.github.io/my-bug-game/index.html"
   }
 }
