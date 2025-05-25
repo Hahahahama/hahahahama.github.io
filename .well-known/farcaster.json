@@ -1,0 +1,11 @@
+{
+  "name": "Farcasters",
+  "description": "Click the Farcaster logo as it moves around to score points!",
+  "startUrl": "/index.html",
+  "frame": {
+    "width": 360,
+    "height": 640
+  },
+  "accountAssociation": {}
+}
+
