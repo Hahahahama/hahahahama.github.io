@@ -1,11 +1,13 @@
 {
-  "frame": {
-    "version": "1",
-    "name": "Farcaster Logo Catch Game",
-    "iconUrl": "https://hahahahama.github.io/my-bug-game/farcaster-logo.png",
-    "homeUrl": "https://hahahahama.github.io/my-bug-game/index.html"
-  },
   "accountAssociation": {
-    // Warpcast Manifest Tool에서 복사해온 서명된 객체
+    "header":  "…",    // Warpcast Manifest Tool에서 생성한 서명(header)
+    "payload": "…",    // 서명된 payload
+    "signature":"…"    // signature
+  },
+  "frame": {
+    "version": "1",    // 무조건 "1"
+    "name":    "Farcaster Logo Catch Game", 
+    "iconUrl": "https://USERNAME.github.io/my-bug-game/farcaster-logo.png",
+    "homeUrl": "https://USERNAME.github.io/my-bug-game/index.html"
   }
 }
