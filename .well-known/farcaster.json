@@ -1,13 +1,9 @@
 {
-  "accountAssociation": {
-    "header":  "…",    // Warpcast Manifest Tool에서 생성한 서명(header)
-    "payload": "…",    // 서명된 payload
-    "signature":"…"    // signature
-  },
+  "accountAssociation": { /* 툴에서 복사한 서명 객체 */ },
   "frame": {
-    "version": "1",    // 무조건 "1"
-    "name":    "Farcaster Logo Catch Game", 
-    "iconUrl": "https://USERNAME.github.io/my-bug-game/farcaster-logo.png",
-    "homeUrl": "https://USERNAME.github.io/my-bug-game/index.html"
+    "version": "1",
+    "name":    "Farcaster Logo Catch Game",
+    "iconUrl": "https://…/farcaster-logo.png",
+    "homeUrl": "https://…/index.html"
   }
 }
