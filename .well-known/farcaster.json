@@ -1,9 +1,11 @@
 {
+  {
   "accountAssociation": {
-    "header":    "…", 
-    "payload":   "…", 
-    "signature": "…"
-  },
+    "header": "eyJmaWQiOjUyOTYyOCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDJjN0VDNjk1QzUzODJFN0EzNjgyNEM5MTM0NTlBYjg4NThDMUUwZTEifQ",
+    "payload": "eyJkb21haW4iOiJoYWhhaGFoYW1hLmdpdGh1Yi5pbyJ9",
+    "signature": "MHgzZjQxYWVhN2Y2ZTM5NDIyMmFiOGZmMGIyZjZiNmEzNThlYThlZjU0YzU5M2ZiZGZjYTlkNTc2OTJkMzVhMmQ3MjY5NWFjNzYyNTRkMDEzMjM4Y2VhN2YwNmRjOGI3MzlhMWU4ZjYyODU2NWZkMTU0NGMzYmYyYzNkMjg5NmU3YjFi"
+  }
+},
   "frame": {
     "version": "1",
     "name":    "Farcaster Logo Catch Game",
