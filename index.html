@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farcaster Logo Catch Game</title>
+  <style>
+    body { margin: 0; overflow: hidden; background: #eef; font-family: sans-serif; }
+    #score { position: absolute; top: 10px; left: 10px; font-size: 24px; }
+    #time  { position: absolute; top: 10px; right: 10px; font-size: 24px; }
+    canvas { display: block; background: #aaf; }
+  </style>
+</head>
+<body>
+  <div id="score">Score: 0</div>
+  <div id="time">Time: 30</div>
+  <canvas id="game"></canvas>
+
+  <script>
+    // 1️⃣ Farcaster 로고 이미지 로드
+    const logoImg = new Image();
+    logoImg.src = 'farcaster-logo.png';
+
+    // 2️⃣ 캔버스 셋업
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+    let W = canvas.width = window.innerWidth;
+    let H = canvas.height = window.innerHeight;
+
+    let logos = [], score = 0, timeLeft = 30;
+
+    // 3️⃣ Logo 클래스 (이제 벌레 대신 로고가 튀어다님)
+    class Logo {
+      constructor() {
+        this.size = 40;
+        this.x = Math.random() * (W - this.size) + this.size/2;
+        this.y = Math.random() * (H - this.size) + this.size/2;
+        this.vx = (Math.random() - 0.5) * 3;
+        this.vy = (Math.random() - 0.5) * 3;
+      }
+      move() {
+        this.x += this.vx; this.y += this.vy;
+        if (this.x < 0 || this.x > W) this.vx *= -1;
+        if (this.y < 0 || this.y > H) this.vy *= -1;
+      }
+      draw() {
+        if (logoImg.complete) {
+          ctx.drawImage(
+            logoImg,
+            this.x - this.size/2,
+            this.y - this.size/2,
+            this.size,
+            this.size
+          );
+        }
+      }
+      isHit(mx, my) {
+        const dx = mx - this.x, dy = my - this.y;
+        return Math.hypot(dx, dy) < this.size/2;
+      }
+    }
+
+    // 4️⃣ 스폰, 업데이트, 타이머, 클릭 처리 등 나머지 로직은 똑같이 logos 배열 사용
+    function spawnLogo() {
+      if (logos.length < 10) logos.push(new Logo());
+    }
+
+    function update() {
+      ctx.clearRect(0, 0, W, H);
+      logos.forEach(l => { l.move(); l.draw(); });
+      requestAnimationFrame(update);
+    }
+
+    function tick() {
+      if (timeLeft <= 0) {
+        alert(`Game Over! Final Score: ${score}`);
+        return window.location.reload();
+      }
+      timeLeft--;
+      document.getElementById('time').textContent = `Time: ${timeLeft}`;
+      spawnLogo();
+      setTimeout(tick, 1000);
+    }
+
+    canvas.addEventListener('click', e => {
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+      for (let i = logos.length - 1; i >= 0; i--) {
+        if (logos[i].isHit(mx, my)) {
+          logos.splice(i, 1);
+          score++;
+          document.getElementById('score').textContent = `Score: ${score}`;
+          break;
+        }
+      }
+    });
+
+    // 초기화
+    for (let i = 0; i < 5; i++) spawnLogo();
+    update();
+    setTimeout(tick, 1000);
+
+    // 리사이즈 대응
+    window.addEventListener('resize', () => {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
